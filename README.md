@@ -41,7 +41,7 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 To set up your python environment to run the code in this repository, follow the instructions [here.](https://github.com/udacity/deep-reinforcement-learning#dependencies)
 
-And follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
+Then, just follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
 
 Once trained, the actor critic model weights are saved. For agent 0 in checkpoint_actor_0.pth and checkpint_critic_0.pth. For agent 1 in checkpoint_actor_1.pth and checkpint_critic_1.pth.
 
