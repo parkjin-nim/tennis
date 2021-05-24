@@ -21,19 +21,13 @@ class mAgent():
         actions = [self.agents[posit].act(np.array([states[posit]])) for posit in range(self.num_agents)];
         return actions;
     
-    #def save(self, key):
     def save(self):
         for posit in range(self.num_agents):
-            #torch.save(self.agents[posit].actor_local.state_dict(), 'checkpoint_actor_%d_key_%s.pth'%(posit, key));
-            #torch.save(self.agents[posit].critic_local.state_dict(), 'checkpoint_critic_%d_key_%s.pth'%(posit, key));
             torch.save(self.agents[posit].actor_local.state_dict(), 'checkpoint_actor_%d.pth'%(posit));
             torch.save(self.agents[posit].critic_local.state_dict(), 'checkpoint_critic_%d.pth'%(posit));
             
-    #def load(self, key):
     def load(self):
         for posit in range(self.num_agents):
-            #self.agents[posit].actor_local.load_state_dict(torch.load('checkpoints/checkpoint_actor_%d_key_%s.pth'%(posit, key), map_location='cpu'));
-            #self.agents[posit].critic_local.load_state_dict(torch.load('checkpoints/checkpoint_critic_%d_key_%s.pth'%(posit, key), map_location='cpu'));
             self.agents[posit].actor_local.load_state_dict(torch.load('checkpoint_actor_%d.pth'%(posit), map_location='cpu'));
             self.agents[posit].critic_local.load_state_dict(torch.load('checkpoint_critic_%d.pth'%(posit), map_location='cpu'));
 
